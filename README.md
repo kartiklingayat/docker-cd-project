@@ -1,5 +1,4 @@
-### ✅ **Final Overview (Copy–Paste into Docker Hub “Overview” Section)**
-
+**Continuous Deployment (CD) Project — Docker, GitHub & Docker Hub Integration**
 ````markdown
 # 🚀 Dockerized Continuous Deployment App
 
