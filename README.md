@@ -1,7 +1,4 @@
 📘 DevOps FAT2 Assignment — Docker + Linux Commands + Flask App
-Submitted by: Kartik Lingayat
-Email: kartiklingayat019@gmail.com
-Last Date: 28 Nov 2025
 🚀 Project Overview
 
 This project demonstrates how to build a Flask web application, containerize it using Docker, and include basic Linux command operations inside the Dockerfile as required.
