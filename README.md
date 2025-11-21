@@ -1,149 +1,174 @@
-**Continuous Deployment (CD) Project — Docker, GitHub & Docker Hub Integration**
-````markdown
-# 🚀 Dockerized Continuous Deployment App
+📘 DevOps FAT2 Assignment — Docker + Linux Commands + Flask App
+Submitted by: Kartik Lingayat
+Email: kartiklingayat019@gmail.com
+Last Date: 28 Nov 2025
+🚀 Project Overview
 
-## 📘 Project Overview
-This project demonstrates a simple **Flask web application** containerized using **Docker** as part of a **Continuous Deployment (CD)** workflow.
+This project demonstrates how to build a Flask web application, containerize it using Docker, and include basic Linux command operations inside the Dockerfile as required.
 
-It showcases how to:
-- 🏗️ Build and run a lightweight Python Flask app  
-- 🐋 Containerize it using Docker  
-- ☁️ Push it to Docker Hub for easy deployment and sharing  
-- 🔄 Maintain version control on GitHub for CI/CD integration  
+The project also includes:
 
----
+✔️ GitHub version control
 
-## 🧩 Features
-✅ Lightweight Python Flask web application  
-✅ Fully Dockerized for platform-independent deployment  
-✅ Ready for GitHub & Docker Hub CI/CD integration  
-✅ Beginner-friendly — ideal for DevOps & Cloud practice  
+✔️ Docker image build
 
----
+✔️ Docker Hub upload
 
-## ⚙️ Setup & Run Locally
+✔️ Basic Linux commands inside Dockerfile
 
-### 1️⃣ Clone Repository
-```bash
-git clone https://github.com/kartiklingayat/docker-cd-project.git
+✔️ Flask application (app.py)
+
+✔️ Professional README with DevOps concepts
+
+📁 Repository & DockerHub Links
+
+🔗 GitHub Repository (Submission):
+https://github.com/kartiklingayat/docker-cd-project
+
+🔗 Docker Hub Image:
+https://hub.docker.com/r/kartiklingayat/kartik-cd-app
+
+🔗 Docker Hub Profile:
+https://hub.docker.com/repositories/kartiklingayat
+
+🧩 1. Five DevOps Concepts
+1️⃣ Continuous Integration (CI)
+
+Code is merged frequently into a shared repository where automated tests ensure stability.
+
+2️⃣ Continuous Deployment (CD)
+
+Every code change that passes tests is automatically deployed to production.
+
+3️⃣ Infrastructure as Code (IaC)
+
+Managing infrastructure using config files instead of manual steps (e.g., Terraform).
+
+4️⃣ Monitoring & Logging
+
+Application performance, system logs, and metrics help maintain system health.
+
+5️⃣ Containerization
+
+Packaging apps with dependencies inside isolated containers (Docker) for consistent deployments.
+
+🐳 Dockerfile Used (With Basic Linux Commands — REQUIRED by Assignment)
+
+Your Dockerfile below includes Linux operations (mkdir, echo, ls, cat) + Flask setup:
+
+# Step 1: Use official Python base image
+FROM python:3.9-slim
+
+# Step 2: Basic Linux command operations (Assignment Requirement)
+RUN mkdir /myfolder
+RUN echo "This is a basic Linux command inside Dockerfile" > /myfolder/info.txt
+RUN ls -l /myfolder
+RUN cat /myfolder/info.txt
+RUN pwd
+
+# Step 3: Set working directory
+WORKDIR /app
+
+# Step 4: Copy project files into container
+COPY . .
+
+# Step 5: Install Python dependencies
+RUN pip install -r requirements.txt
+
+# Step 6: Expose port 5000
+EXPOSE 5000
+
+# Step 7: Start Flask Application
+CMD ["python", "app.py"]
+
+🧪 Flask Application (app.py)
+from flask import Flask
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return "🚀 Hello from Kartik's Dockerized CD App!"
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000)
+
+📦 requirements.txt
+flask
+
+🛠️ 2. How I Completed the Assignment (Step-by-Step)
+Step 1 — Create project folder
+mkdir docker-cd-project
 cd docker-cd-project
-````
 
-### 2️⃣ Build Docker Image
+Step 2 — Create app.py, requirements.txt, Dockerfile
+touch app.py requirements.txt Dockerfile
 
-```bash
+Step 3 — Build the Docker image
 docker build -t kartik-cd-app .
-```
 
-### 3️⃣ Run the Container
-
-```bash
+Step 4 — Run the container
 docker run -d -p 5000:5000 kartik-cd-app
-```
 
-Now open your browser and visit:
-👉 **[http://localhost:5000](http://localhost:5000)**
+Step 5 — Verify output
 
-You should see:
+Open your browser:
+👉 http://localhost:5000
 
-> 🚀 Hello from Kartik’s Dockerized CD App!
+You will see:
+“🚀 Hello from Kartik's Dockerized CD App!”
 
----
-
-## 🐋 DockerHub Image
-
-The prebuilt image is available publicly on Docker Hub. Pull it directly:
-
-```bash
-docker pull kartiklingayat/kartik-cd-app:latest
-```
-
-🔗 **Docker Hub Repository:**
-👉 [https://hub.docker.com/r/kartiklingayat/kartik-cd-app](https://hub.docker.com/r/kartiklingayat/kartik-cd-app)
-
-🔗 **All My Docker Repositories:**
-👉 [https://hub.docker.com/repositories/kartiklingayat](https://hub.docker.com/repositories/kartiklingayat)
-
----
-
-## 📦 GitHub Repository
-
-Full source code and Docker configuration are available here:
-👉 [https://github.com/kartiklingayat/docker-cd-project](https://github.com/kartiklingayat/docker-cd-project)
-
----
-
-## 🧠 Step-by-Step CI/CD Guide (for Practice or Exam)
-
-### 🧭 1. Initialize Git Repository
-
-```bash
-git init
-git add .
-git commit -m "Initial commit - Docker CD project"
-```
-
-### 🧭 2. Push Code to GitHub
-
-```bash
-git branch -M main
-git remote add origin https://github.com/kartiklingayat/docker-cd-project.git
-git push -u origin main
-```
-
-✅ GitHub Repo: [https://github.com/kartiklingayat/docker-cd-project](https://github.com/kartiklingayat/docker-cd-project)
-
----
-
-### 🧭 3. Push Docker Image to Docker Hub
-
-```bash
+🐳 Docker Commands Used
+docker build -t kartik-cd-app .
+docker images
+docker run -d -p 5000:5000 kartik-cd-app
+docker ps -a
 docker login
 docker tag kartik-cd-app kartiklingayat/kartik-cd-app:latest
 docker push kartiklingayat/kartik-cd-app:latest
-```
 
-✅ Docker Hub Repo: [https://hub.docker.com/r/kartiklingayat/kartik-cd-app](https://hub.docker.com/r/kartiklingayat/kartik-cd-app)
+🔧 Git Commands Used
+git init
+git add .
+git commit -m "Initial commit - Flask Docker CD project"
+git branch -M main
+git remote add origin https://github.com/kartiklingayat/docker-cd-project.git
+git push -u origin main
 
----
+🎓 3. How This Assignment Helped Me Learn DevOps
+📌 DevOps
 
-## ⚙️ Technologies Used
+Learned how CI/CD, Git, Docker, and Linux come together to build automated pipelines.
 
-* Python 3
-* Flask
-* Docker
-* GitHub
-* Docker Hub
+📌 Linux
 
----
+Practiced essential Linux commands such as:
+mkdir, echo, ls, cat, pwd
 
-## 💡 Verification
+📌 Git
 
-You can view your image live at:
-👉 [https://hub.docker.com/r/kartiklingayat/kartik-cd-app](https://hub.docker.com/r/kartiklingayat/kartik-cd-app)
+Understood version control, branching, staging, committing, and pushing to GitHub.
 
----
+📌 Docker
 
-## 🌟 Upcoming Journey
+Learned how to:
 
-**Kartik Lingayat — Upcoming Cloud Network Engineer Intern at Microsoft**
-🚀 Passionate about Cloud, Networking, Microsoft Azure and Scalable Infrastructure!
+write a Dockerfile
 
----
+build an image
 
-*Maintained by Kartik Lingayat | © 2025*
+run containers
 
-```
+expose ports
 
----
+push to Docker Hub
 
-### ✅ How to Add It:
-1. Go to your repo: [https://hub.docker.com/r/kartiklingayat/kartik-cd-app](https://hub.docker.com/r/kartiklingayat/kartik-cd-app)
-2. Click **“Manage Repository” → “Edit Description/Overview”**
-3. Paste the above Markdown
-4. Click **Save**
+✅ Assignment Completed Successfully
 
----
-
-Would you like me to make a **shorter, portfolio-style version** (2–3 lines summary) for your Docker profile bio too? It helps recruiters visiting your Docker Hub page.
-```
+This README contains everything required by the instructor:
+✔️ Dockerfile with Linux commands
+✔️ 5 DevOps concepts
+✔️ Explanation of steps
+✔️ Docker + Git commands
+✔️ Learning outcome
+✔️ Flask app + Dockerfile + links
+✔️ Professional formatting
