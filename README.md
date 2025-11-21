@@ -77,7 +77,7 @@ CMD ["python", "app.py"]
 
 ---
 
-# 📘 **DevOps Concepts **
+# 📘 **DevOps Concepts**
 
 1️⃣ Continuous Integration (CI)
 
