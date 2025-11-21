@@ -2,7 +2,7 @@
 
 This project contains a simple Flask application packaged inside a Docker container.
 The container also demonstrates **basic Linux commands** (as required in the assignment).
-The final Docker image is pushed to Docker Hub for public access.
+The final Docker image has been built, tested, and pushed to Docker Hub for public access.
 
 ---
 
@@ -32,8 +32,6 @@ docker-cd-python/
 ---
 
 # 🐍 **Flask Application Code**
-
-Here is the exact Flask code used in the project (as requested):
 
 ```
 from flask import Flask
@@ -81,25 +79,25 @@ CMD ["python", "app.py"]
 
 # 📘 **DevOps Concepts (Any 5)**
 
-## 1️⃣ **Continuous Integration (CI)**
+## 1️⃣ Continuous Integration (CI)
 
-CI ensures that every code change is tested and verified before merging into the main branch.
+Ensures every code change is automatically tested and validated.
 
-## 2️⃣ **Continuous Delivery (CD)**
+## 2️⃣ Continuous Delivery (CD)
 
-CD automates the release process so that applications can be deployed at any time.
+Automates deployment so applications can be released anytime.
 
-## 3️⃣ **Containerization**
+## 3️⃣ Containerization
 
-Docker containers package applications with their dependencies for consistent environments everywhere.
+Packages the application and dependencies inside a Docker container.
 
-## 4️⃣ **Version Control (Git)**
+## 4️⃣ Version Control (Git)
 
-Git helps track changes, manage branches, collaborate, and roll back if necessary.
+Helps track changes, maintain history, and collaborate efficiently.
 
-## 5️⃣ **Infrastructure as Code (IaC)**
+## 5️⃣ Infrastructure as Code (IaC)
 
-Tools like Terraform or CloudFormation define infrastructure in files instead of manual setup.
+Defines infrastructure using files instead of manual steps.
 
 ---
 
@@ -117,7 +115,7 @@ docker build -t kartik-cd-app .
 docker run -p 5000:5000 kartik-cd-app
 ```
 
-### **3️⃣ Open Browser**
+### **3️⃣ Open in Browser**
 
 ```
 http://localhost:5000
@@ -127,19 +125,19 @@ http://localhost:5000
 
 # 📤 **Push Image to Docker Hub**
 
-### **Login**
+### Login:
 
 ```
 docker login
 ```
 
-### **Tag Image**
+### Tag Image:
 
 ```
 docker tag kartik-cd-app kartiklingayat/kartik-cd-app
 ```
 
-### **Push Image**
+### Push Image:
 
 ```
 docker push kartiklingayat/kartik-cd-app
@@ -161,19 +159,19 @@ git init
 git add .
 ```
 
-### Commit Message
+### Commit
 
 ```
 git commit -m "Initial commit - Docker CD Python App"
 ```
 
-### Add GitHub Remote
+### Add Remote Repo
 
 ```
 git remote add origin https://github.com/<your-username>/<your-repo>.git
 ```
 
-### Push to GitHub
+### Push Code
 
 ```
 git push -u origin main
@@ -183,13 +181,33 @@ git push -u origin main
 
 # 🎯 **Assignment Summary (In Words)**
 
-To complete this assignment, I created a project folder containing a Flask application and a Dockerfile.
-Inside the Dockerfile, I added **basic Linux command operations** such as creating a folder, listing files, and displaying text.
+To complete this assignment, I created a Flask application and wrote a Dockerfile that includes **basic Linux operations** like creating folders, writing text files, listing files, and printing output.
 
-Then I built the Docker image using `docker build`, tested it locally using `docker run`, and pushed it to Docker Hub using `docker push`.
+Then, I installed dependencies, built the Docker image, ran it locally, and pushed the image to Docker Hub.
+I also used Git to track all changes and uploaded the project to GitHub.
 
-Finally, I documented all steps, concepts, and commands in this README.md file, and uploaded everything to a GitHub repository.
+Finally, I documented every step, command, and DevOps concept in this README.md file.
 
 ---
 
-# ✅ **Assignment Completed Successfully**
+# 🎓 **How This Assignment Helped Me Learn DevOps, Linux, Git & Docker**
+
+### 🔹 Linux
+
+Running Linux commands inside the Dockerfile improved my understanding of filesystem operations and container build steps.
+
+### 🔹 Git
+
+Using Git for commits, versioning, and pushing to GitHub strengthened my version-control skills.
+
+### 🔹 Docker
+
+Building, running, tagging, and pushing Docker images gave me practical containerization experience.
+
+### 🔹 DevOps
+
+This assignment combined multiple DevOps skills—automation, versioning, packaging, and deployment—similar to real-world CI/CD workflows.
+
+This hands-on practice improved my confidence in working with modern DevOps tools and pipelines.
+
+
